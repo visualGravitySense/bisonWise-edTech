@@ -161,6 +161,8 @@
   },
   "active": "0b7e84761216e73f",
   "lastOpenFiles": [
+    "Pages/index.vue",
+    "Pages",
     "node_modules/@vercel/nft/node_modules/@rollup/pluginutils/dist/es/package.json",
     "node_modules/@vercel/nft/node_modules/@rollup/pluginutils/dist/es/index.js",
     "node_modules/@vercel/nft/node_modules/@rollup/pluginutils/dist/cjs/index.js",
@@ -170,8 +172,6 @@
     "node_modules/tinyglobby/node_modules/fdir/dist/api/functions/resolve-symlink.d.ts",
     "node_modules/tinyglobby/node_modules/fdir/dist/api/functions/resolve-symlink.js",
     "node_modules/tinyglobby/node_modules/fdir/dist/api/functions/push-file.js",
-    "node_modules/tinyglobby/node_modules/fdir/dist/api/functions/push-file.d.ts",
-    "node_modules/tinyglobby/node_modules/fdir/dist/api/functions/push-directory.js",
     "node_modules/send/node_modules/debug/node_modules/ms/readme.md",
     "node_modules/send/node_modules/debug/node_modules/ms/license.md",
     "node_modules/lazystream/node_modules/readable-stream/doc/wg-meetings/2015-01-30.md",
