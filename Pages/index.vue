@@ -16,6 +16,7 @@
       
       <h2 class="text-3xl font-bold mb-6">Featured Courses</h2>
       
+      <CourseFilter/>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         <CourseCard
           v-for="course in courses"
@@ -48,6 +49,7 @@ import Header from '~/components/Header.vue';
 import Footer from '~/components/Footer.vue';
 import CourseCard from '~/components/CourseCard.vue';
 import CategoryCard from '~/components/CategoryCard.vue';
+import CourseFilter from '~/components/CourseFilter.vue';
 
 // Template classes
 const courses = [

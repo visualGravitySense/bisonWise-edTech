@@ -1,43 +1,35 @@
-<!-- components/CourseCard.vue -->
 <template>
-    <div class="max-w-sm rounded overflow-hidden shadow-lg m-4">
-      <!-- Immage -->
-      <img class="w-full" :src="course.image" :alt="course.title" />
-      
-      <div class="px-6 py-4">
-        <!-- Name -->
-        <div class="font-bold text-xl mb-2">{{ course.title }}</div>
-        
-        <!-- Teacher -->
-        <p class="text-gray-700 text-base">
-          {{ course.instructor }}
-        </p>
-      </div>
-      
-      <!-- Price -->
-      <div class="px-6 pt-4 pb-2 flex justify-between items-center">
-        <span class="font-bold text-lg">{{ course.price }} $</span>
-        <SfButton class="bg-green-600 text-white px-4 py-2 rounded">
-          Add to Cart
-        </SfButton>
-      </div>
+  <div class="course-card bg-white shadow-lg rounded-lg p-4">
+    <img :src="course.image" alt="Course image" class="rounded-t-lg w-full h-48 object-cover">
+    <div class="p-4">
+      <h2 class="text-xl font-bold">{{ course.title }}</h2>
+      <p class="text-gray-600">{{ course.description }}</p>
+      <p class="text-blue-500 font-semibold mt-2">{{ course.price }}</p>
+      <SfButton @click="goToCourse(course.id)" class="mt-4">View Course</SfButton>
     </div>
-  </template>
-  
-  <script setup>
-  // 
-  import { SfButton } from '@storefront-ui/vue';
-  
-  // props
-  defineProps({
-    course: {
-      type: Object,
-      required: true,
-    },
-  });
-  </script>
-  
-  <style scoped>
-  /*  */
-  </style>
-  
+  </div>
+</template>
+
+<script setup>
+import { SfButton } from '@storefront-ui/vue';
+import { useRouter } from 'vue-router';
+
+const props = defineProps({
+  course: {
+    type: Object,
+    required: true
+  }
+});
+
+const router = useRouter();
+
+function goToCourse(id) {
+  router.push(`/courses/${id}`);
+}
+</script>
+
+<style scoped>
+.course-card {
+  max-width: 320px;
+}
+</style>

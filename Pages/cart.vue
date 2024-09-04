@@ -1,63 +1,31 @@
-<!-- pages/cart.vue -->
 <template>
-    <div class="container mx-auto p-4">
-      <h1 class="text-2xl font-bold mb-4">Shopping Cart</h1>
-      
-      <div v-if="cartItems.length === 0">
-        <p>Your cart is empty.</p>
+  <div class="cart-page">
+    <Header />
+    <div class="container mx-auto p-6">
+      <h1 class="text-2xl font-bold mb-4">Your Cart</h1>
+      <div v-if="cartItems.length">
+        <CourseCard v-for="item in cartItems" :key="item.id" :course="item" />
+        <SfButton @click="checkout" class="mt-6">Proceed to Checkout</SfButton>
       </div>
-  
-      <div v-else>
-        <!-- Products in cart -->
-        <ul>
-          <li v-for="item in cartItems" :key="item.id" class="mb-4">
-            <div class="flex justify-between items-center border-b pb-2">
-              <div>
-                <h2 class="text-lg">{{ item.title }}</h2>
-                <p class="text-gray-600">{{ item.price }} $</p>
-              </div>
-              <SfButton class="bg-red-500 text-white px-4 py-2" @click="removeFromCart(item.id)">
-                Remove
-              </SfButton>
-            </div>
-          </li>
-        </ul>
-  
-        <!-- Main cost -->
-        <div class="mt-6">
-          <h2 class="text-xl font-bold">Total: {{ totalPrice }} $</h2>
-          <SfButton class="bg-green-600 text-white px-4 py-2 mt-4" @click="proceedToCheckout">
-            Proceed to Checkout
-          </SfButton>
-        </div>
-      </div>
+      <p v-else>Your cart is empty.</p>
     </div>
-  </template>
-  
-  <script setup>
-  import { SfButton } from '@storefront-ui/vue';
-  import { useCartStore } from '~/stores/cart';
-  
-  // Getting data from Cart
-  const cartStore = useCartStore();
-  const cartItems = cartStore.items;
-  const totalPrice = computed(() => {
-    return cartItems.reduce((total, item) => total + item.price, 0);
-  });
-  
-  // Delite from cart
-  function removeFromCart(itemId) {
-    cartStore.removeFromCart(itemId);
-  }
-  
-  // Function to order
-  function proceedToCheckout() {
-    // Router to order page
-    alert('Proceeding to checkout...');
-  }
-  </script>
-  
-  <style scoped>
-  /*  */
-  </style>
-  
+    <Footer />
+  </div>
+</template>
+
+<script setup>
+import Header from '~/components/Header.vue';
+import Footer from '~/components/Footer.vue';
+import CourseCard from '~/components/CourseCard.vue';
+import { SfButton } from '@storefront-ui/vue';
+
+// Пример данных корзины
+const cartItems = [
+  { id: 1, title: 'Vue.js Basics', description: 'Learn the basics of Vue.js', price: '$49', image: 'path/to/image' },
+];
+
+function checkout() {
+  // Логика перехода на страницу оформления заказа
+  console.log('Proceeding to checkout');
+}
+</script>

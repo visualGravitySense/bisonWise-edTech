@@ -37,14 +37,26 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "pages.md",
+                "file": "mvp.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "793ff6d0806be96e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "mvp.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -110,7 +122,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "pages.md",
+                "file": "mvp.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -127,7 +139,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "pages.md",
+                "file": "mvp.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -150,7 +162,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "pages.md"
+                "file": "mvp.md"
               }
             }
           }
@@ -171,8 +183,9 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "8df00c88108a9755",
+  "active": "793ff6d0806be96e",
   "lastOpenFiles": [
+    "backend.md",
     "mvp.md",
     "pages.md",
     "Untitled",

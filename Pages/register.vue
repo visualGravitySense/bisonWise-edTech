@@ -1,50 +1,32 @@
-<!-- pages/register.vue -->
 <template>
-    <div class="container mx-auto p-4 max-w-md">
-      <h1 class="text-2xl font-bold mb-6">Register</h1>
-      
-      <form @submit.prevent="register">
-        <!-- Ввод имени -->
-        <div class="mb-4">
-          <label class="block text-gray-700">Full Name</label>
-          <SfInput v-model="fullName" placeholder="Enter your full name" class="w-full" />
-        </div>
-        
-        <!-- Ввод email -->
-        <div class="mb-4">
-          <label class="block text-gray-700">Email</label>
-          <SfInput v-model="email" type="email" placeholder="Enter your email" class="w-full" />
-        </div>
-        
-        <!-- Ввод пароля -->
-        <div class="mb-4">
-          <label class="block text-gray-700">Password</label>
-          <SfInput v-model="password" type="password" placeholder="Enter your password" class="w-full" />
-        </div>
-  
-        <!-- Кнопка регистрации -->
-        <SfButton type="submit" class="bg-green-600 text-white px-4 py-2 mt-4">
-          Register
-        </SfButton>
-      </form>
+  <div class="register-page">
+    <Header />
+    <div class="container mx-auto p-6">
+      <h1 class="text-2xl font-bold mb-4">Register</h1>
+      <div class="bg-white p-6 rounded-lg shadow-md">
+        <SfInput v-model="user.name" placeholder="Full Name" />
+        <SfInput v-model="user.email" placeholder="Email Address" class="mt-4" />
+        <SfInput type="password" v-model="user.password" placeholder="Password" class="mt-4" />
+        <SfButton @click="register" class="mt-6">Register</SfButton>
+      </div>
     </div>
-  </template>
-  
-  <script setup>
-  import { ref } from 'vue';
-  import { SfButton, SfInput } from '@storefront-ui/vue';
-  
-  const fullName = ref('');
-  const email = ref('');
-  const password = ref('');
-  
-  function register() {
-    // Логика регистрации
-    alert(`Registering user: ${fullName.value}`);
-  }
-  </script>
-  
-  <style scoped>
-  /* Дополнительные стили */
-  </style>
-  
+    <Footer />
+  </div>
+</template>
+
+<script setup>
+import Header from '~/components/Header.vue';
+import Footer from '~/components/Footer.vue';
+import { SfInput, SfButton } from '@storefront-ui/vue';
+
+const user = {
+  name: '',
+  email: '',
+  password: '',
+};
+
+function register() {
+  // Логика регистрации пользователя
+  console.log('User registered:', user);
+}
+</script>

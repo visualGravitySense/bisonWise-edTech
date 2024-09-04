@@ -1,24 +1,17 @@
-<!-- components/Footer.vue -->
 <template>
-    <footer class="bg-gray-800 text-white p-6 mt-10">
-      <div class="container mx-auto text-center">
-        <!-- Copy -->
-        <p class="mb-4">&copy; 2024 BisonWise. All rights reserved.</p>
-        
-        <!-- Links -->
-        <div class="flex justify-center space-x-6">
-          <a href="/privacy" class="hover:text-blue-400">Privacy Policy</a>
-          <a href="/terms" class="hover:text-blue-400">Terms of Service</a>
-          <a href="/contact" class="hover:text-blue-400">Contact Us</a>
-        </div>
+  <footer class="bg-gray-800 text-white py-6">
+    <div class="container mx-auto grid grid-cols-2 gap-8">
+      <div>
+        <h2 class="text-lg font-bold">About Us</h2>
+        <p class="text-gray-400">Learn more about our mission and vision.</p>
       </div>
-    </footer>
-  </template>
-  
-  <script setup>
-  </script>
-  
-  <style scoped>
-  /*  */
-  </style>
-  
+      <div>
+        <h2 class="text-lg font-bold">Follow Us</h2>
+        <p class="text-gray-400">Stay connected on social media.</p>
+      </div>
+    </div>
+  </footer>
+</template>
+
+<script setup>
+</script>
